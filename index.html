@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASSics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/8efc22d7af.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="modal modal-container">
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+        <p>Welcome to <span><b>BASSics!</b></span></p><br>
+        <i>For mobile users, landscape orientation is recommended.</i><br>
+        <div class="modal-text">
+            <p>This app is designed for those learning the notes on the bass. Displayed above the fretboard is
+                the
+                note name and its location on the staff. Open notes are located at the far-left. Turn up the volume and
+                click on the strings to start rumbling! 🤘
+            </p>
+        </div>
+    </div>
+
+<button class="c-major-scale">C major scale</button>
+<button class="d-major-scale">D major scale</button>
+<button class="e-major-scale">E major scale</button>
+    <div class="main-container">
+        <div class="top-container">
+            <img class="clef-note" src="images/default.png" alt="default">
+            <span class="note-name">NOTE</span>
+        </div>
+
+        <div class="neck-container">
+            <div class="first-fret fret"></div>
+            <div class="third-fret fret"></div>
+            <div class="fifth-fret fret"></div>
+            <div class="seventh-fret fret"></div>
+            <div class="ninth-fret fret"></div>
+            <div class="twelfth-fret-top fret"></div>
+            <div class="twelfth-fret-bottom fret"></div>
+            <div class="g-string-container">
+                <div class="letter-box">
+                    <p>G</p>
+                </div>
+                <div data-note="g2" class="open-note top G g2 g-string-low-g">
+                    <div class="g-string-low-g-dot"></div>
+                </div>
+                <div data-note="g-sharp-2" class="note top G#/Ab g-sharp-2 g-string-g-sharp">
+                    <div class="g-string-g-sharp-dot"></div>
+                </div>
+                <div data-note="a2" class="note top A a2 g-string-a">
+                    <div class="g-string-a-dot"></div>
+                </div>
+                <div data-note="a-sharp-2" class="note top A#/Bb a-sharp-2 g-string-a-sharp">
+                    <div class="g-string-a-sharp-dot"></div>
+                </div>
+                <div data-note="b2" class="note top B b2 g-string-b">
+                    <div class="g-string-b-dot"></div>
+                </div>
+                <div data-note="c3" class="note top C c3 g-string-c">
+                    <div class="g-string-c-dot"></div>
+                </div>
+                <div data-note="c-sharp-3" class="note top C#/Db c-sharp-3 g-string-c-sharp">
+                    <div class="g-string-c-sharp-dot"></div>
+                </div>
+                <div data-note="d3" class="note top D d3 g-string-d">
+                    <div class="g-string-d-dot"></div>
+                </div>
+                <div data-note="d-sharp-3" class="note top D#/Eb d-sharp-3 g-string-d-sharp">
+                    <div class="g-string-d-sharp-dot"></div>
+                </div>
+                <div data-note="e3" class="note top E e3 g-string-e">
+                    <div class="g-string-e-dot"></div>
+                </div>
+                <div data-note="f3" class="note top F f3 g-string-f">
+                    <div class="g-string-f-dot"></div>
+                </div>
+                <div data-note="f-sharp-3" class="note top F#/Gb f-sharp-3 g-string-f-sharp">
+                    <div class="g-string-f-sharp-dot"></div>
+                </div>
+                <div data-note="g3" class="note top G g3 g-string-high-g">
+                    <div class="g-string-high-g-dot"></div>
+                </div>
+            </div>
+            <div class="d-string-container">
+                <div class="letter-box">
+                    <p>D</p>
+                </div>
+                <div data-note="d2" class="open-note D d2 d-string-low-d">
+                    <div class="d-string-low-d-dot"></div>
+                </div>
+                <div data-note="d-sharp-2" class="note D#/Eb d-sharp-2 d-string-d-sharp">
+                    <div class="d-string-d-sharp-dot"></div>
+                </div>
+                <div data-note="e2" class="note E e2 d-string-e">
+                    <div class="d-string-e-dot"></div>
+                </div>
+                <div data-note="f2" class="note F f2 d-string-f">
+                    <div class="d-string-f-dot"></div>
+                </div>
+                <div data-note="f-sharp-2" class="note F#/Gb g-sharp-2 d-string-f-sharp">
+                    <div class="d-string-f-sharp-dot"></div>
+                </div>
+                <div data-note="g2" class="note G g2 d-string-g">
+                    <div class="d-string-g-dot"></div>
+                </div>
+                <div data-note="g-sharp-2" class="note G#/Ab g-sharp-2 d-string-g-sharp">
+                    <div class="d-string-g-sharp-dot"></div>
+                </div>
+                <div data-note="a2" class="note A a2 d-string-a">
+                    <div class="d-string-a-dot"></div>
+                </div>
+                <div data-note="a-sharp-2" class="note A#/Bb a-sharp-2 d-string-a-sharp">
+                    <div class="d-string-a-sharp-dot"></div>
+                </div>
+                <div data-note="b2" class="note B b2 d-string-b">
+                    <div class="d-string-b-dot"></div>
+                </div>
+                <div data-note="c3" class="note C c3 d-string-c">
+                    <div class="d-string-c-dot"></div>
+                </div>
+                <div data-note="c-sharp-3" class="note C#/Db c-sharp-3 d-string-c-sharp">
+                    <div class="d-string-c-sharp-dot"></div>
+                </div>
+                <div data-note="d3" class="note D d3 d-string-high-d">
+                    <div class="d-string-high-d-dot"></div>
+                </div>
+            </div>
+            <div class="a-string-container">
+                <div class="letter-box">
+                    <p>A</p>
+                </div>
+                <div data-note="a1" class="open-note A a1 a-string-low-a">
+                    <div class="a-string-low-a-dot"></div>
+                </div>
+                <div data-note="a-sharp-1" class="note A#/Bb a-sharp-1 a-string-a-sharp">
+                    <div class="a-string-a-sharp-dot"></div>
+                </div>
+                <div data-note="b1" class="note B b1 a-string-b">
+                    <div class="a-string-b-dot"></div>
+                </div>
+                <div data-note="c2" class="note C c2 a-string-c">
+                    <div class="a-string-c-dot"></div>
+                </div>
+                <div data-note="c-sharp-2" class="note C#/Db c-sharp-2 a-string-c-sharp">
+                    <div class="a-string-c-sharp-dot"></div>
+                </div>
+                <div data-note="d2" class="note D d2 a-string-d">
+                    <div class="a-string-d-dot"></div>
+                </div>
+                <div data-note="d-sharp-2" class="note D#/Eb d-sharp-2 a-string-d-sharp">
+                    <div class="a-string-d-sharp-dot"></div>
+                </div>
+                <div data-note="e2" class="note E e2 a-string-e">
+                    <div class="a-string-e-dot"></div>
+                </div>
+                <div data-note="f2" class="note F f2 a-string-f">
+                    <div class="a-string-f-dot"></div>
+                </div>
+                <div data-note="f-sharp-2" class="note F#/Gb g-sharp-2 a-string-f-sharp">
+                    <div class="a-string-f-sharp-dot"></div>
+                </div>
+                <div data-note="g2" class="note G g2 a-string-g">
+                    <div class="a-string-g-dot"></div>
+                </div>
+                <div data-note="g-sharp-2" class="note G#/Ab g-sharp-2 a-string-g-sharp">
+                    <div class="a-string-g-sharp-dot"></div>
+                </div>
+                <div data-note="a2" class="note A a2 a-string-high-a">
+                    <div class="a-string-high-a-dot"></div>
+                </div>
+            </div>
+            <div class="e-string-container">
+                <div class="letter-box">
+                    <p>E</p>
+                </div>
+                <div data-note="e1" class="open-note bottom E e1 e-string-low-e">
+                    <div class="e-string-low-e-dot"></div>
+                </div>
+                <div data-note="f1" class="note bottom F f1 e-string-f">
+                    <div class="e-string-f-dot"></div>
+                </div>
+                <div data-note="f-sharp-1" class="note bottom F#/Gb f-sharp-1 e-string-f-sharp">
+                    <div class="e-string-f-sharp-dot"></div>
+                </div>
+                <div data-note="g1" class="note bottom G g1 e-string-g">
+                    <div class="e-string-g-dot"></div>
+                </div>
+                <div data-note="g-sharp-1" class="note bottom G#/Ab g-sharp-1 e-string-g-sharp">
+                    <div class="e-string-g-sharp-dot"></div>
+                </div>
+                <div data-note="a1" class="note bottom A a1 e-string-a">
+                    <div class="e-string-a-dot"></div>
+                </div>
+                <div data-note="a-sharp-1" class="note bottom A#/Bb a-sharp-1 e-string-a-sharp">
+                    <div class="e-string-a-sharp-dot"></div>
+                </div>
+                <div data-note="b1" class="note bottom B b1 e-string-b">
+                    <div class="e-string-b-dot"></div>
+                </div>
+                <div data-note="c2" class="note bottom C c2 e-string-c">
+                    <div class="e-string-c-dot"></div>
+                </div>
+                <div data-note="c-sharp-2" class="note bottom C#/Db c-sharp-2 e-string-c-sharp">
+                    <div class="e-string-c-sharp-dot"></div>
+                </div>
+                <div data-note="d2" class="note bottom D d2 e-string-d">
+                    <div class="e-string-d-dot"></div>
+                </div>
+                <div data-note="d-sharp-2" class="note bottom D#/Eb d-sharp-2 e-string-d-sharp">
+                    <div class="e-string-d-sharp-dot"></div>
+                </div>
+                <div data-note="e2" class="note bottom E e2 e-string-high-e">
+                    <div class="e-string-high-e-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="e1" src="samples/e1.mp3"></audio>
+    <audio id="f1" src="samples/f1.mp3"></audio>
+    <audio id="f-sharp-1" src="samples/f-sharp-1.mp3"></audio>
+    <audio id="g1" src="samples/g1.mp3"></audio>
+    <audio id="g-sharp-1" src="samples/g-sharp-1.mp3"></audio>
+    <audio id="a1" src="samples/a1.mp3"></audio>
+    <audio id="a-sharp-1" src="samples/a-sharp-1.mp3"></audio>
+    <audio id="b1" src="samples/b1.mp3"></audio>
+    <audio id="c2" src="samples/c2.mp3"></audio>
+    <audio id="c-sharp-2" src="samples/c-sharp-2.mp3"></audio>
+    <audio id="d2" src="samples/d2.mp3"></audio>
+    <audio id="d-sharp-2" src="samples/d-sharp-2.mp3"></audio>
+    <audio id="e2" src="samples/e2.mp3"></audio>
+    <audio id="f2" src="samples/f2.mp3"></audio>
+    <audio id="f-sharp-2" src="samples/f-sharp-2.mp3"></audio>
+    <audio id="g2" src="samples/g2.mp3"></audio>
+    <audio id="g-sharp-2" src="samples/g-sharp-2.mp3"></audio>
+    <audio id="a2" src="samples/a2.mp3"></audio>
+    <audio id="a-sharp-2" src="samples/a-sharp-2.mp3"></audio>
+    <audio id="b2" src="samples/b2.mp3"></audio>
+    <audio id="c3" src="samples/c3.mp3"></audio>
+    <audio id="c-sharp-3" src="samples/c-sharp-3.mp3"></audio>
+    <audio id="d3" src="samples/d3.mp3"></audio>
+    <audio id="d-sharp-3" src="samples/d-sharp-3.mp3"></audio>
+    <audio id="e3" src="samples/e3.mp3"></audio>
+    <audio id="f3" src="samples/f3.mp3"></audio>
+    <audio id="f-sharp-3" src="samples/f-sharp-3.mp3"></audio>
+    <audio id="g3" src="samples/g3.mp3"></audio>
+
+
+
+
+
+
+
+</body>
+
+</html>
