@@ -10,14 +10,10 @@ body {
     min-height: 100vh;
     min-width: 100vh;
     background-image: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
-  
+
 }
 
-h1 {
-    font-family: Inter, sans-serif;
-    margin-bottom: -20px;
-}
-
+/* TOP CONTAINER - NOTE ON STAFF AND NOTE TEXT DISPLAY */
 .top-container {
     display: flex;
     flex-direction: column;
@@ -26,6 +22,7 @@ h1 {
     margin-top: 180px;
 }
 
+/* MODEL ELEMENTS */
 .modal {
     height: 250px;
     width: 600px;
@@ -46,6 +43,11 @@ h1 {
     margin-top: -60px;
 }
 
+.mobile-text {
+    font-size: 12px;
+    margin: 7px 0px;
+}
+
 .modal-container {
     line-height: 1.5rem;
     position: absolute;
@@ -64,15 +66,18 @@ h1 {
     -webkit-box-shadow: 1px -1px 18px 1px rgba(117, 117, 117, 0.75);
     -moz-box-shadow: 1px -1px 18px 1px rgba(117, 117, 117, 0.75);
     visibility: visible;
-    
+    font-size: 16px;
+    overflow: scroll;
+    padding: 15px 0px;
+
 }
 
 .modal-container.hidden {
     visibility: hidden;
 }
 
- /* DOTS STYLING */
- .e-string-low-e-dot,
+/* DOTS STYLING */
+.e-string-low-e-dot,
 .e-string-f-dot,
 .e-string-f-sharp-dot,
 .e-string-g-dot,
@@ -126,15 +131,13 @@ h1 {
 .g-string-e-dot,
 .g-string-f-dot,
 .g-string-f-sharp-dot,
-.g-string-high-g-dot
-
-{
+.g-string-high-g-dot {
     width: 15px;
     height: 15px;
     background-color: red;
     border-radius: 50%;
     position: absolute;
-    visibility: hidden;  
+    visibility: hidden;
     box-shadow: 3px -1px 22px 7px rgba(255,186,0,0.75);
     -webkit-box-shadow: 3px -1px 22px 7px rgba(255,186,0,0.75);
     -moz-box-shadow: 3px -1px 22px 7px rgba(255,186,0,0.75);
@@ -146,7 +149,7 @@ h1 {
     position: absolute;
     top: 1rem;
     right: .5rem;
-    
+
     font-size: 1.7rem;
     background: transparent;
     border-color: transparent;
@@ -160,7 +163,8 @@ h1 {
     transition: ease-in-out .1s;
 }
 
-.main-container  {
+/* MAIN CONTAINER */
+.main-container {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -168,11 +172,13 @@ h1 {
     text-align: center;
 }
 
+/* STAFF DISPLAY */
 img {
     width: 170px;
     margin-right: 21px;
 }
 
+/* NOTE NAME TEXT DISPLAY */
 .clef-note {
     margin-bottom: -30px;
 }
@@ -185,7 +191,7 @@ img {
 }
 
 
-
+/* STRING VISUAL AFTER */
 .neck-container:after {
     content: '';
     height: 10px;
@@ -194,6 +200,7 @@ img {
 
 }
 
+/* FRET MARKERS */
 .fret {
     position: absolute;
     width: 10px;
@@ -244,12 +251,14 @@ img {
     margin-left: 639px;
 }
 
+/* CONTAINERS FOR EACH STRING */
 .e-string-container,
 .a-string-container,
 .d-string-container,
 .g-string-container {
     display: flex;
 }
+
 
 .letter-box {
     width: 15px;
@@ -278,16 +287,19 @@ img {
     margin: 0;
 }
 
-.note.top
- {
+/* GRADIENT FOR TOP OF THE FRETBOARD */
+.note.top {
     background: linear-gradient(180deg, rgba(2, 0, 36, 0.9108237044817927) 0%, rgba(106, 1, 1, 1) 18%);
 }
 
+/* GRADIENT FOR BOTTOM OF THE FRETBOARD */
 .note.bottom {
     background: linear-gradient(180deg, rgba(106, 1, 1, 1) 89%, rgba(2, 0, 36, 0.9108237044817927) 100%);
 }
 
-.open-note.top, .open-note.bottom {
+
+.open-note.top,
+.open-note.bottom {
     background-color: black;
 }
 
@@ -318,5 +330,55 @@ img {
 .open-note:hover::after {
     content: '';
     background: linear-gradient(180deg, rgba(2, 0, 36, 0.9108237044817927) 0%, rgb(209, 209, 209) 53%, rgba(2, 0, 36, 1) 100%);
+    cursor: pointer;
+}
+
+
+
+/* SELECT DROPDOWN MENU STYLES */
+select {
+    background-color: rgb(228, 225, 225);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+select:hover {
+    cursor: pointer;
+    background-color: rgb(246, 246, 246);
+    transition: ease-in-out .2s;
+}
+
+.scale-container {
+    margin: 10px 0px;
+    font-family: Inter, sans-serif;
+}
+
+/* 
+PLAY SCALE BUTTONS */
+.play-major-scale-btn, .play-minor-scale-btn {
+    padding: 8px;
+    font-family: Inter, sans-serif;
+    border-radius: 5px;
+    border: none;
+}
+
+.play-major-scale-btn {
+    background-color: gold;
+}
+
+.play-minor-scale-btn {
+    background-color: rgb(223, 81, 255);
+}
+
+.play-major-scale-btn:hover {
+    background-color: rgb(250, 232, 129);
+    transition: ease-in-out .2s;
+    cursor: pointer;
+}
+
+.play-minor-scale-btn:hover {
+    background-color: rgb(234, 147, 253);
+    transition: ease-in-out .2s;
     cursor: pointer;
 }
