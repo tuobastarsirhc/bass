@@ -1349,15 +1349,23 @@ const quizNote = document.querySelector(".quiz-note");
 const message = document.querySelector(".message");
 const quizModal = document.querySelector(".quiz-modal");
 const scoreText = document.querySelector(".score");
+const closeQuiz = document.querySelector(".close-quiz");
 let score = 0;
+
+
 
 quizBtn.addEventListener('click', function(){
     isQuizMode = true;
     nextBtn.disabled = true;
+    score = 0;
+    scoreText.innerHTML = score;
+    scoreText.style.color = "black";
+    message.innerHTML = "";
     let randomNumber = Math.floor((Math.random() * noteNameClassesForNoteTextDisplay.length));
     randomNote = noteNameClassesForNoteTextDisplay[randomNumber];
     quizNote.innerHTML = randomNote;
     quizModal.classList.add("active")
+    quizBtn.disabled = true;
 
 })
 
@@ -1371,6 +1379,7 @@ function showCorrectMessage(e){
         if(score >= 0){
             scoreText.style.color = "black";
         }
+
         nextBtn.disabled = false;
 
     } else {
@@ -1393,3 +1402,8 @@ nextBtn.addEventListener('click', function(){
     nextBtn.disabled = true;
 })
 
+closeQuiz.addEventListener('click', function(){
+    score = 0;
+    quizModal.classList.remove("active")
+    quizBtn.disabled = false;
+})
