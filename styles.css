@@ -384,3 +384,61 @@ PLAY SCALE BUTTONS */
     transition: ease-in-out .2s;
     cursor: pointer;
 }
+
+/* QUIZ MODAL */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-btn {
+    background-color: greenyellow;
+    padding: 8px;
+    font-family: Inter, sans-serif;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+}
+
+.quiz-btn:hover {
+    background-color: rgb(221, 255, 170);
+    transition: ease-in-out .2s;
+    cursor: pointer;   
+}
+
+.quiz-modal {
+    background-color: rgba(226, 226, 226, 0.569);
+    width: 90%;
+    height: 210px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Inter, sans-serif;
+    visibility: hidden;
+}
+
+.quiz-modal.active {
+    visibility: visible;
+}
+
+.next-btn {
+    background-color: rgb(13, 193, 0);
+    padding: 8px;
+    font-family: Inter, sans-serif;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+}
+
+.next-btn:hover {
+    background-color: rgb(15, 232, 0);
+    transition: ease-in-out .2s;
+    cursor: pointer;
+    border: .3px solid black;  
+}

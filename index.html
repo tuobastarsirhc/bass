@@ -223,23 +223,32 @@
         <div class="scale-container">
             <label for="major-scales">Choose a key:</label>
             <select name="major-scales" id="major-scales">
-                <option value="c-major" class="c-major">C</option>
-                <option value="c-sharp-major">C#/Db</option>
-                <option value="d-major">D</option>
-                <option value="d-sharp-major">D#/Eb</option>
-                <option value="e-major">E</option>
-                <option value="f-major">F</option>
-                <option value="f-sharp-major">F#/Gb</option>
-                <option value="g-major">G</option>
-                <option value="g-sharp-major">G#/Ab</option>
-                <option value="a-major">A</option>
-                <option value="a-sharp-major">A#/Bb</option>
-                <option value="b-major">B</option>
+                <option value="c" class="c-major">C</option>
+                <option value="c-sharp">C#/Db</option>
+                <option value="d">D</option>
+                <option value="d-sharp">D#/Eb</option>
+                <option value="e">E</option>
+                <option value="f">F</option>
+                <option value="f-sharp">F#/Gb</option>
+                <option value="g">G</option>
+                <option value="g-sharp">G#/Ab</option>
+                <option value="a">A</option>
+                <option value="a-sharp">A#/Bb</option>
+                <option value="b">B</option>
             </select>
             <button class="play-major-scale-btn">Play Major Scale</button>
             <button class="play-minor-scale-btn">Play Minor Scale</button>
         </div>
-
+        <div class="quiz-container">
+            <button class="quiz-btn">Take Quiz?</button>
+            <div class="quiz-modal">
+                <p>Look at the requested note below and click on the corresponding fret. The octave does not matter.</p>
+                <h4>Play a <span class="quiz-note"></span>...</h4>
+                <p>Your answer is: <span class="message"></span></p>
+                <button class="next-btn">Next</button><br>
+                <p>Score: <span class="score">0</span></p>
+            </div>
+        </div>
     </div>
 
     <audio id="e1" src="samples/e1.mp3"></audio>

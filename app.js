@@ -9,6 +9,8 @@ const dot = document.querySelector(".dot");
 const playMajorScaleBtn = document.querySelector(".play-major-scale-btn");
 const playMinorScaleBtn = document.querySelector(".play-minor-scale-btn");
 
+let isQuizMode = false;
+
 //NOTE NAME CLASSES FOR NOTE TEXT DISPLAY
 const noteNameClassesForNoteTextDisplay = ["E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb"];
 
@@ -733,40 +735,40 @@ playMajorScaleBtn.addEventListener('click', function () {
     let chosenMajorScale = document.getElementById("major-scales").value;
 
     switch (chosenMajorScale) {
-        case "c-major":
+        case "c":
             playCMajorScale();
             break;
-        case "c-sharp-major":
+        case "c-sharp":
             playCSharpMajorScale();
             break;
-        case "d-major":
+        case "d":
             playDMajorScale();
             break;
-        case "d-sharp-major":
+        case "d-sharp":
             playDSharpMajorScale();
             break;
-        case "e-major":
+        case "e":
             playEMajorScale();
             break;
-        case "f-major":
+        case "f":
             playFMajorScale();
             break;
-        case "f-sharp-major":
+        case "f-sharp":
             playFSharpMajorScale();
             break;
-        case "g-major":
+        case "g":
             playGMajorScale();
             break;
-        case "g-sharp-major":
+        case "g-sharp":
             playGSharpMajorScale();
             break;
-        case "a-major":
+        case "a":
             playAMajorScale();
             break;
-        case "a-sharp-major":
+        case "a-sharp":
             playASharpMajorScale();
             break;
-        case "b-major":
+        case "b":
             playBMajorScale();
             break;
     }
@@ -994,43 +996,43 @@ playMinorScaleBtn.addEventListener('click', function () {
     let chosenMinorScale = document.getElementById("major-scales").value;
 
     switch (chosenMinorScale) {
-        case "c-major":
+        case "c":
             playCMinorScale();
             break;
-        case "c-sharp-major":
+        case "c-sharp":
             playCSharpMinorScale();
             break;
-        case "d-major":
+        case "d":
             playDMinorScale();
             break;
-        case "d-sharp-major":
+        case "d-sharp":
             playDSharpMinorScale();
             break;
-        case "e-major":
+        case "e":
             playEMinorScale();
             break;
-        case "f-major":
+        case "f":
             playFMinorScale();
             break;
-        case "f-sharp-major":
+        case "f-sharp":
             playFSharpMinorScale();
             break;
-        case "g-major":
+        case "g":
             playGMinorScale();
             break;
-        case "g-sharp-major":
+        case "g-sharp":
             playGSharpMinorScale();
             break;
-        case "a-major":
+        case "a":
             playAMinorScale();
             break;
-        case "a-sharp-major":
+        case "a-sharp":
             playASharpMinorScale();
             break;
-        case "b-major":
+        case "b":
             playBMinorScale();
             break;
-    }
+        }
 })
 
 //MINOR SCALE FUNCTIONS
@@ -1262,7 +1264,9 @@ for (let note of notes) {
         changeNoteName(e);
         changePicture(e);
         showDot(e);
-
+        if(isQuizMode){
+            showCorrectMessage(e);
+        }
     })
 }
 
@@ -1284,6 +1288,9 @@ for (let openNote of openNotes) {
         changeNoteName(e);
         changePicture(e);
         showDot(e);
+        if(isQuizMode){
+            showCorrectMessage(e);
+        }
     })
 }
 
@@ -1334,3 +1341,50 @@ function showDot(e) {
 
     }
 }
+
+//QUIZ 
+const quizBtn = document.querySelector(".quiz-btn");
+const nextBtn = document.querySelector(".next-btn");
+const quizNote = document.querySelector(".quiz-note");
+const message = document.querySelector(".message");
+const quizModal = document.querySelector(".quiz-modal");
+const scoreText = document.querySelector(".score");
+let score = 0;
+
+quizBtn.addEventListener('click', function(){
+    isQuizMode = true;
+    let randomNumber = Math.floor((Math.random() * noteNameClassesForNoteTextDisplay.length));
+    randomNote = noteNameClassesForNoteTextDisplay[randomNumber];
+    quizNote.innerHTML = randomNote;
+    quizModal.classList.add("active")
+
+})
+
+//SHOW CORRECT MESSAGE
+function showCorrectMessage(e){
+    if(e.target.classList.contains(randomNote)){
+        score++;
+        message.innerHTML = "correct!";
+        message.style.color = "green";
+        scoreText.innerHTML = score;
+        if(score >= 0){
+            scoreText.style.color = "black";
+        }
+    } else {
+        score--;
+        scoreText.innerHTML = score;
+        message.innerHTML = "incorrect.";
+        message.style.color = "red";
+        if(score < 0){
+            scoreText.style.color = "red";
+        }
+    }
+}
+
+nextBtn.addEventListener('click', function(){
+    let randomNumber = Math.floor((Math.random() * noteNameClassesForNoteTextDisplay.length));
+    randomNote = noteNameClassesForNoteTextDisplay[randomNumber];
+    quizNote.innerHTML = randomNote;
+    message.innerHTML = "";
+})
+
