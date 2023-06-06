@@ -1353,6 +1353,7 @@ let score = 0;
 
 quizBtn.addEventListener('click', function(){
     isQuizMode = true;
+    nextBtn.disabled = true;
     let randomNumber = Math.floor((Math.random() * noteNameClassesForNoteTextDisplay.length));
     randomNote = noteNameClassesForNoteTextDisplay[randomNumber];
     quizNote.innerHTML = randomNote;
@@ -1370,14 +1371,17 @@ function showCorrectMessage(e){
         if(score >= 0){
             scoreText.style.color = "black";
         }
+        nextBtn.disabled = false;
+
     } else {
         score--;
         scoreText.innerHTML = score;
-        message.innerHTML = "incorrect.";
+        message.innerHTML = "incorrect. Try again.";
         message.style.color = "red";
         if(score < 0){
             scoreText.style.color = "red";
         }
+        nextBtn.disabled = true;
     }
 }
 
@@ -1386,5 +1390,6 @@ nextBtn.addEventListener('click', function(){
     randomNote = noteNameClassesForNoteTextDisplay[randomNumber];
     quizNote.innerHTML = randomNote;
     message.innerHTML = "";
+    nextBtn.disabled = true;
 })
 
